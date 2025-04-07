@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIPPER | 3D Модели</title>
+    <style>
+        /* Основные стили */
+        body {
+            background-color: #000;
+            color: #CC0000;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #CC0000;
+            font-size: 1.2em;
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3em;
+            margin: 0;
+            color: #CC0000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
+            padding: 10px;
+            border-bottom: 2px solid #333;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+
+        nav a:hover, nav a.active {
+            color: #CC0000;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #CC0000;
+            font-family: inherit;
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .models-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .model-card {
+            background-color: #111;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #CC0000;
+            transition: all 0.3s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(204, 0, 0, 0.3);
+        }
+
+        .model-name {
+            font-size: 1.5em;
+            margin: 0 0 10px 0;
+            color: #CC0000;
+            text-align: center;
+        }
+
+        .model-viewer {
+            width: 100%;
+            height: 300px;
+            background-color: #222;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .model-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .controls-info {
+            color: #bbb;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-top: 2px solid #333;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            .models-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RIPPER</h1>
+        <p>3D Модели из Blender</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О себе</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="twitch.html">Twitch</a>
+        <a href="3dmodel.html" class="active">Мои модели</a>
+    </nav>
+
+    <main>
+        <h2>Мои 3D модели</h2>
+        
+        <div class="models-container">
+            <!-- Комната -->
+            <div class="model-card">
+                <h3 class="model-name">Комната</h3>
+                <div class="model-viewer">
+                    <img src="artblend/izohometrain.png" alt="3D модель комнаты" class="model-image">
+                </div>
+                <p class="controls-info">Изометрическая комната, созданная в Blender</p>
+            </div>
+            
+            <!-- Здесь будут добавляться новые модели -->
+            <!-- Шаблон для новых моделей -->
+            <!--
+            <div class="model-card">
+                <h3 class="model-name">Имя модели</h3>
+                <div class="model-viewer">
+                    <img src="путь/к/изображению" alt="Описание" class="model-image">
+                </div>
+                <p class="controls-info">Описание управления или информации</p>
+            </div>
+            -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RIPPER | Все права защищены</p>
+    </footer>
+</body>
+</html>

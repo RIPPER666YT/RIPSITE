@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIPPER | Twitch</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ddd;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #9147ff;
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3em;
+            margin: 0;
+            color: #9147ff;
+        }
+
+        header p {
+            color: #9147ff;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
+            padding: 10px;
+            border-bottom: 2px solid #333;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: 0.3s;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        nav a:hover, nav a.active {
+            color: #9147ff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #9147ff;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .social-grid {
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-card {
+            display: flex;
+            background-color: #111;
+            border-radius: 8px;
+            overflow: hidden;
+            border-left: 4px solid #9147ff;
+            transition: all 0.3s ease;
+            align-items: center;
+            padding: 15px;
+            text-decoration: none;
+            color: #ddd;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(145, 71, 255, 0.3);
+            background-color: #0a0a0a;
+        }
+
+        .social-icon {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 70px;
+            color: #9147ff;
+            font-size: 2em;
+        }
+
+        .social-info {
+            flex-grow: 1;
+        }
+
+        .social-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.3em;
+            color: #fff;
+        }
+
+        .social-info p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .online {
+            background-color: #00ff7f;
+            box-shadow: 0 0 5px #00ff7f;
+        }
+
+        .offline {
+            background-color: #ff5555;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            border-top: 2px solid #333;
+        }
+
+        footer p {
+            margin: 0;
+            color: #9147ff;
+        }
+
+        @media (max-width: 768px) {
+            .social-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-icon {
+                padding: 10px;
+            }
+            
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RIPPER<span class="purple"></span></h1>
+        <p>Стример | Ютубер</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О себе</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="twitch.html" class="active">Twitch</a>
+        <a href="3dmodel.html">Мои модели</a>
+    </nav>
+
+    <main>
+        <section class="twitch-stats">
+            <h2>Мой Twitch</h2>
+            
+            <div class="social-grid">
+                <!-- Карточка текущего стрима -->
+                <a href="https://www.twitch.tv/ripper_cmertanoc" target="_blank" class="social-card" id="stream-card">
+                    <div class="social-icon">🔴</div>
+                    <div class="social-info">
+                        <h4><span class="status offline"></span>Статус стрима</h4>
+                        <p id="stream-status-text">Загрузка статуса...</p>
+                    </div>
+                </a>
+
+                <!-- Карточка последнего стрима -->
+                <a href="https://www.twitch.tv/ripper_cmertanoc/videos" target="_blank" class="social-card" id="last-stream-card">
+                    <div class="social-icon">📅</div>
+                    <div class="social-info">
+                        <h4>Последний стрим</h4>
+                        <p id="last-stream-date">Загрузка даты...</p>
+                    </div>
+                </a>
+
+                <!-- Карточка подписчиков -->
+                <a href="https://www.twitch.tv/ripper_cmertanoc/about" target="_blank" class="social-card" id="followers-card">
+                    <div class="social-icon">❤️</div>
+                    <div class="social-info">
+                        <h4>Подписчики</h4>
+                        <p id="followers-count">Загрузка...</p>
+                    </div>
+                </a>
+
+                <!-- Карточка клипов -->
+                <a href="https://www.twitch.tv/ripper_cmertanoc/clips" target="_blank" class="social-card">
+                    <div class="social-icon">🎥</div>
+                    <div class="social-info">
+                        <h4>Популярные клипы</h4>
+                        <p>Смотреть все клипы</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RIPPER | Все права защищены</p>
+    </footer>
+
+    <script>
+        // Настройки Twitch API
+        const CLIENT_ID = 'z8d0r6o7zk5jqw3lrep9wt7joplomw';
+        const ACCESS_TOKEN = 'y0n0955m5lzyphj8d4mya4omufjzy7';
+        const CHANNEL_NAME = 'ripper_cmertanoc';
+        
+        // Основная функция загрузки данных
+        async function loadTwitchData() {
+            try {
+                // Получаем ID канала
+                const userId = await getUserId();
+                if (!userId) return;
+                
+                // Загружаем данные параллельно
+                await Promise.all([
+                    loadStreamStatus(userId),
+                    loadFollowers(userId),
+                    loadLastStreamDate(userId)
+                ]);
+                
+            } catch (error) {
+                console.error('Ошибка загрузки данных:', error);
+                document.getElementById('stream-status-text').textContent = "Ошибка загрузки данных";
+            }
+        }
+        
+        // Получаем ID пользователя
+        async function getUserId() {
+            const response = await fetch(`https://api.twitch.tv/helix/users?login=${CHANNEL_NAME}`, {
+                headers: {
+                    'Client-ID': CLIENT_ID,
+                    'Authorization': `Bearer ${ACCESS_TOKEN}`
+                }
+            });
+            
+            if (!response.ok) throw new Error('Ошибка получения ID пользователя');
+            
+            const data = await response.json();
+            return data.data?.[0]?.id;
+        }
+        
+        // Загружаем статус стрима
+        async function loadStreamStatus(userId) {
+            const response = await fetch(`https://api.twitch.tv/helix/streams?user_id=${userId}`, {
+                headers: {
+                    'Client-ID': CLIENT_ID,
+                    'Authorization': `Bearer ${ACCESS_TOKEN}`
+                }
+            });
+            
+            if (!response.ok) throw new Error('Ошибка загрузки статуса стрима');
+            
+            const data = await response.json();
+            const statusElement = document.getElementById('stream-status-text');
+            const statusIndicator = document.querySelector('#stream-card .status');
+            
+            if (data.data && data.data.length > 0) {
+                const stream = data.data[0];
+                statusElement.textContent = `В эфире: ${stream.title}`;
+                statusIndicator.className = "status online";
+                document.getElementById('stream-card').href = `https://www.twitch.tv/${CHANNEL_NAME}`;
+            } else {
+                statusElement.textContent = "Сейчас оффлайн";
+                statusIndicator.className = "status offline";
+            }
+        }
+        
+        // Загружаем количество подписчиков
+        async function loadFollowers(userId) {
+            const response = await fetch(`https://api.twitch.tv/helix/channels/followers?broadcaster_id=${userId}&first=1`, {
+                headers: {
+                    'Client-ID': CLIENT_ID,
+                    'Authorization': `Bearer ${ACCESS_TOKEN}`
+                }
+            });
+            
+            if (!response.ok) throw new Error('Ошибка загрузки подписчиков');
+            
+            const data = await response.json();
+            const followersElement = document.getElementById('followers-count');
+            
+            if (data.total) {
+                followersElement.textContent = `${data.total.toLocaleString()} подписчиков`;
+            } else {
+                followersElement.textContent = "Недоступно";
+            }
+        }
+        
+        // Загружаем дату последнего стрима
+        async function loadLastStreamDate(userId) {
+            const response = await fetch(`https://api.twitch.tv/helix/videos?user_id=${userId}&first=1&type=archive`, {
+                headers: {
+                    'Client-ID': CLIENT_ID,
+                    'Authorization': `Bearer ${ACCESS_TOKEN}`
+                }
+            });
+            
+            if (!response.ok) throw new Error('Ошибка загрузки последнего стрима');
+            
+            const data = await response.json();
+            const dateElement = document.getElementById('last-stream-date');
+            
+            if (data.data && data.data.length > 0) {
+                const lastStreamDate = new Date(data.data[0].created_at);
+                dateElement.textContent = lastStreamDate.toLocaleString('ru-RU', {
+                    day: 'numeric',
+                    month: 'long',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                // Обновляем ссылку на последний стрим
+                document.getElementById('last-stream-card').href = `https://www.twitch.tv/videos/${data.data[0].id}`;
+            } else {
+                dateElement.textContent = "Нет данных";
+            }
+        }
+        
+        // Запускаем загрузку данных при загрузке страницы
+        document.addEventListener('DOMContentLoaded', loadTwitchData);
+    </script>
+</body>
+</html>

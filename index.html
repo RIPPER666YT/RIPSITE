@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIPPER | Главная</title>
+    <style>
+        /* Общие стили для всех страниц */
+        body {
+            background-color: #000;
+            color: #ddd;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #CC0000;
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3em;
+            margin: 0;
+            color: #CC0000;
+        }
+
+        header p {
+            color: #CC0000;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
+            padding: 10px;
+            border-bottom: 2px solid #333;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: 0.3s;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        nav a:hover, nav a.active {
+            color: #CC0000;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Стили для главной страницы */
+        .content-block {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #CC0000;
+        }
+
+        .content-block h3 {
+            color: #CC0000;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+
+        .content-block p {
+            color: #ddd;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: #CC0000;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #CC0000;
+        }
+
+        .contact-info a {
+            color: #CC0000;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 2px solid #333;
+        }
+
+        footer p {
+            color: #CC0000; /* Изменён цвет текста на красный */
+            margin: 0;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1em;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+                font-size: 16px;
+            }
+            
+            .content-block {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RIPPER</h1>
+        <p>Стример | Ютубер</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">Главная</a>
+        <a href="about.html">О себе</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="twitch.html">Twitch</a>
+        <a href="3dmodel.html">Мои модели</a>
+    </nav>
+
+    <main>
+        <div class="content-block">
+            <h3>Обо мне</h3>
+            <p>Если ты уже зашёл сюда, то плюс-минус или точно ты уже понимаешь кто я.</p>
+            <p><span class="highlight">Ютубер с 2019 года</span> — создаю контент уже несколько лет.</p>
+            <p>О стримерстве тяжелее сказать — можно считать начальную дату, когда я запустил первый стрим на YouTube, но это было далеко не стабильно. Если же брать Twitch, то мой путь начался <span class="highlight">в декабре 2023 года</span>, и вот это уже более стабильная история.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>Зачем этот сайт?</h3>
+            <p>Сайт я сделал сам — не было на то особой причины, но <span class="highlight">"а почему бы и нет?"</span>.</p>
+            <p>По факту он служит просто информацией обо мне. Возможно, когда-то это изменится, но <span class="highlight">никаких гарантий не даю</span>.</p>
+            <p>Сайт будет ещё обновляться</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>Контакты</h3>
+            <p>Если кто-то хочет со мной связаться по каким-то вопросам — пишите на почту:</p>
+            <p><a href="mailto:ripper.cmerchev@mail.ru">ripper.cmerchev@mail.ru</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RIPPER | Все права защищены</p>
+    </footer>
+</body>
+</html>

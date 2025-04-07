@@ -1,0 +1,175 @@
+/* Основные стили */
+body {
+    background-color: #000;
+    color: #ff0000;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #CC0000;
+}
+
+header h1 {
+    font-family: inherit; /* или просто удалите строку с font-family */
+    font-size: 3em;
+    margin: 0;
+    color: #CC0000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #111;
+    padding: 10px;
+    border-bottom: 2px solid #333;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: 0.3s;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+nav a:hover, 
+nav a.active {
+    color: #CC0000;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Стили для YouTube раздела */
+.video-container {
+    margin: 20px 0;
+}
+
+.video-list {
+    display: grid;
+    gap: 15px;
+}
+
+.video-item {
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 3px solid #CC0000;
+}
+
+/* Стили для таблички соцсетей */
+.social-grid {
+    display: grid;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-card {
+    display: flex;
+    background-color: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    border-left: 4px solid #CC0000;
+    transition: all 0.3s ease;
+    align-items: center;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(204, 0, 0, 0.3);
+}
+
+.social-icon {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+}
+
+/* Специальные стили для иконок */
+.social-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Цвета для YouTube */
+.social-icon .youtube-icon {
+    fill: #CC0000; /* Внешний круг */
+}
+
+.social-icon .youtube-icon .inner-circle {
+    fill: #000; /* Внутренний круг (был белый) */
+}
+
+.social-icon .youtube-icon .play-icon {
+    fill: #CC0000; /* Иконка play (была красная) */
+}
+
+/* Цвета для других иконок */
+.social-icon svg:not(.youtube-icon) {
+    fill: #CC0000;
+}
+
+.social-info {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.social-info h4 {
+    margin: 0 0 5px 0;
+    color: #CC0000;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5em;
+}
+
+.social-info p {
+    margin: 0 0 10px 0;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.social-info a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #CC0000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.social-info a:hover {
+    background-color: #990000;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .social-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-icon {
+        padding: 10px 0;
+    }
+}
+
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 2px solid #333;
+}
